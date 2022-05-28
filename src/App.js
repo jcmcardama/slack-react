@@ -4,7 +4,9 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  useRouteMatch,
+  useParams
 } from "react-router-dom";
 
 // User Registration
@@ -104,15 +106,9 @@ function App() {
         </nav>
       </div>
       <Switch>
-        <Route path="/get-started">
-          <CreateAccount />
-        </Route>
-        <Route path="/client">
-          <Dashboard />
-        </Route>
-        <Route path="/signin">
-          <Signin />
-        </Route>
+        <Route path="/get-started" component={CreateAccount} />
+        <Route path="/client" component={Dashboard} /> 
+        <Route path="/signin" component={Signin} />
       </Switch>
     </Router>
   );
