@@ -5,7 +5,7 @@ import {
   Switch,
   Route,
   Link
-}
+} from "react-router-dom";
 
 // User Registration
 // -needs email 
@@ -45,9 +45,34 @@ import {
 
 function App() {
   return (
-    <div className="App">
-      Hello world
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/signin">Signin</Link>
+            </li>
+            <li>
+              <Link to="/get-started">Create an account</Link>
+            </li>
+            <li>
+              <Link to="/client">Dashboard</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <Switch>
+        <Route path="/get-started">
+          <h2>Create Account</h2>
+        </Route>
+        <Route path="/client">
+          <h2>Dashboard</h2>
+        </Route>
+        <Route path="/signin">
+          <h2>Sign in</h2>
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
