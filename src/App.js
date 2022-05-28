@@ -1,5 +1,6 @@
 import './App.css';
 import {useState} from "react";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,6 +9,7 @@ import {
   useRouteMatch,
   useParams
 } from "react-router-dom";
+
 
 // User Registration
 // -needs email 
@@ -47,16 +49,7 @@ import {
 
 function Signin() {
   return (
-    <div>
-      <h2>Sign in to Slack</h2>
-      <label>email
-        <input type="text" />
-      </label>
-      <label> password
-        <input type="password" />
-      </label>
-      <input type="submit" value="Signin" />
-    </div>
+    <></>
   )
 }
 
