@@ -43,6 +43,20 @@ import {
 // Get all users owned channels
 // Recently DMs
 
+function Signin() {
+  return (
+    <div>
+      <h2>Sign in to Slack</h2>
+      <label>email
+        <input type="text" />
+      </label>
+      <label> password
+        <input type="password" />
+      </label>
+    </div>
+  )
+}
+
 function App() {
   return (
     <Router>
@@ -69,7 +83,7 @@ function App() {
           <h2>Dashboard</h2>
         </Route>
         <Route path="/signin">
-          <h2>Sign in</h2>
+          <Signin />
         </Route>
       </Switch>
     </Router>
