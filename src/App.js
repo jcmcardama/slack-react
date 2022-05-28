@@ -8,6 +8,7 @@ import {
   useRouteMatch,
   useParams
 } from "react-router-dom";
+import Login from './component/Login';
 
 // User Registration
 // -needs email 
@@ -87,6 +88,9 @@ function App() {
         <Route path="/signin" component={Signin} />
       </Switch>
     </Router>
+    <div className="App">
+      <Login />
+    </div>
   );
 }
 
