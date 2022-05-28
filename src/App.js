@@ -53,6 +53,22 @@ function Signin() {
       <label> password
         <input type="password" />
       </label>
+      <input type="submit" value="Signin" />
+    </div>
+  )
+}
+
+function CreateAccount() {
+  return (
+    <div>
+      <h2>Create an Account</h2>
+      <label>Full Name
+        <input type="text" />
+      </label>
+      <label>Password
+        <input type="password" />
+      </label>
+        <input type="submit" value="Create Account" />
     </div>
   )
 }
@@ -77,7 +93,7 @@ function App() {
       </div>
       <Switch>
         <Route path="/get-started">
-          <h2>Create Account</h2>
+          <CreateAccount />
         </Route>
         <Route path="/client">
           <h2>Dashboard</h2>
