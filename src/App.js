@@ -1,6 +1,6 @@
 import './App.css';
-import {useState} from "react";
-import {userRegistration} from "./api.js"
+// import {useState} from "react";
+import UserRegistration from "./component/UserRegistration.js";
 
 // User Registration
 // -needs email 
@@ -41,7 +41,7 @@ import {userRegistration} from "./api.js"
 function App() {
   return (
     <div className="App">
-      {userRegistration("test132132132@gmail.com", "123123", "123123")};
+      
     </div>
   );
 }
