@@ -1,5 +1,6 @@
 import './App.css';
 import {useState} from "react";
+import {userRegistration} from "./api.js"
 
 // User Registration
 // -needs email 
@@ -40,7 +41,7 @@ import {useState} from "react";
 function App() {
   return (
     <div className="App">
-      Hello world
+      {userRegistration("test132132132@gmail.com", "123123", "123123")};
     </div>
   );
 }
