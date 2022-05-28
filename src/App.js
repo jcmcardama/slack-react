@@ -73,6 +73,18 @@ function CreateAccount() {
   )
 }
 
+function Dashboard() {
+  return (
+    <div>
+      <h2>Dashboard</h2>
+      <ul>
+        <li>Channel</li>
+        <li>Direct Messages</li>
+      </ul>
+    </div>
+  )
+}
+
 function App() {
   return (
     <Router>
@@ -96,7 +108,7 @@ function App() {
           <CreateAccount />
         </Route>
         <Route path="/client">
-          <h2>Dashboard</h2>
+          <Dashboard />
         </Route>
         <Route path="/signin">
           <Signin />
