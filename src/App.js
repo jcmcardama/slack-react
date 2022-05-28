@@ -1,6 +1,5 @@
 import './App.css';
 import {useState} from "react";
-
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,7 +8,6 @@ import {
   useRouteMatch,
   useParams
 } from "react-router-dom";
-
 
 // User Registration
 // -needs email 
@@ -70,13 +68,7 @@ function CreateAccount() {
 
 function Dashboard() {
   return (
-    <div>
-      <h2>Dashboard</h2>
-      <ul>
-        <li>Channel</li>
-        <li>Direct Messages</li>
-      </ul>
-    </div>
+    <></>
   )
 }
 
