@@ -53,16 +53,7 @@ function Signin() {
 
 function CreateAccount() {
   return (
-    <div>
-      <h2>Create an Account</h2>
-      <label>Full Name
-        <input type="text" />
-      </label>
-      <label>Password
-        <input type="password" />
-      </label>
-        <input type="submit" value="Create Account" />
-    </div>
+    <></>
   )
 }
 
