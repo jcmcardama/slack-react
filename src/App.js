@@ -1,6 +1,13 @@
 import './App.css';
-// import {useState} from "react";
-import UserRegistration from "./component/UserRegistration.js";
+import {useState} from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams
+} from "react-router-dom";
 
 // User Registration
 // -needs email 
@@ -38,11 +45,48 @@ import UserRegistration from "./component/UserRegistration.js";
 // Get all users owned channels
 // Recently DMs
 
+function Signin() {
+  return (
+    <></>
+  )
+}
+
+function CreateAccount() {
+  return (
+    <></>
+  )
+}
+
+function Dashboard() {
+  return (
+    <></>
+  )
+}
+
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/signin">Signin</Link>
+            </li>
+            <li>
+              <Link to="/get-started">Create an account</Link>
+            </li>
+            <li>
+              <Link to="/client">Dashboard</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <Switch>
+        <Route path="/get-started" component={CreateAccount} />
+        <Route path="/client" component={Dashboard} /> 
+        <Route path="/signin" component={Signin} />
+      </Switch>
+    </Router>
   );
 }
 
