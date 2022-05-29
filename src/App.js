@@ -66,6 +66,7 @@ function Dashboard() {
 
 function App() {
   return (
+    <>
     <Router>
       <div>
         <nav>
@@ -91,6 +92,7 @@ function App() {
     <div className="App">
       <Login />
     </div>
+    </>
   );
 }
 
