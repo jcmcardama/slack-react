@@ -1,7 +1,7 @@
 //LOGIN
 export const userLogin = async (email, password) => {
     // storage for Headers to be used on other functions
-    //let loginHeaders = new Headers()
+    let loginHeaders = new Headers()
 
     let raw = {
         email: email,
