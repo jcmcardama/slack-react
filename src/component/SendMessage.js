@@ -3,6 +3,7 @@ import {sendMessage} from "../api/api-send-message.js"
 
 const SendMessage = () => {
     const [message, setMessage] = useState("");
+    const userId = JSON.parse(localStorage.getItem("userId"));
 
     const messageChangeHandler = (event) => {
         setMessage(event.target.value);
@@ -10,7 +11,8 @@ const SendMessage = () => {
 
     const submitHandler = (event) => {
         event.preventDefault();
-        sendMessage(1, message)
+        sendMessage(userId, message)
+        setMessage("");
       };
 
     return(
@@ -19,7 +21,7 @@ const SendMessage = () => {
             <form onSubmit={submitHandler}>
                 <input
                 type="text"
-                placeholder="Channel Name"
+                placeholder="Enter Message here"
                 value={message}
                 onChange={messageChangeHandler} 
                 />
