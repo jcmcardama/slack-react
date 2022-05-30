@@ -70,6 +70,7 @@ function App() {
       </Switch>
     </Router>
     </>
+>>>>>>> 3f8b3401ce0f2bb53d0626ac1b89d8c831d0ac9e
   );
 }
 
