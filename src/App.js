@@ -1,14 +1,12 @@
-import './App.css';
-import {useState} from "react";
+import Login from './component/Login';
+import UserRegistration from './component/UserRegistration';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useRouteMatch,
-  useParams
+  Link
 } from "react-router-dom";
-import Login from './component/Login';
+import './App.css';
 
 // User Registration
 // -needs email 
@@ -46,26 +44,9 @@ import Login from './component/Login';
 // Get all users owned channels
 // Recently DMs
 
-function Signin() {
-  return (
-    <></>
-  )
-}
-
-function CreateAccount() {
-  return (
-    <></>
-  )
-}
-
-function Dashboard() {
-  return (
-    <></>
-  )
-}
-
 function App() {
   return (
+    <>
     <Router>
       <div>
         <nav>
@@ -83,14 +64,12 @@ function App() {
         </nav>
       </div>
       <Switch>
-        <Route path="/get-started" component={CreateAccount} />
-        <Route path="/client" component={Dashboard} /> 
-        <Route path="/signin" component={Signin} />
+        <Route path="/get-started" component={UserRegistration} />
+        <Route path="/client" /> 
+        <Route path="/signin" component={Login} />
       </Switch>
     </Router>
-    <div className="App">
-      <Login />
-    </div>
+    </>
   );
 }
 
