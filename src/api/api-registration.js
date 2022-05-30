@@ -1,19 +1,19 @@
 export const userRegistration = (email, password, passwordConfirmation) => {
-    // const formData = new FormData();
-    // formData.append("email", email);
-    // formData.append("password", password);
-    // formData.append("password_confirmation", passwordConfirmation);
+    const formData = new FormData();
+    formData.append("email", email);
+    formData.append("password", password);
+    formData.append("password_confirmation", passwordConfirmation);
 
-    const body = {
-        "email": email,
-        "password": password,
-        "password_confirmation": passwordConfirmation
-    };
+    // var body = {
+    //     "email": email,
+    //     "password": password,
+    //     "password_confirmation": passwordConfirmation
+    // };
 
     var requestOptions = {
-    method: 'POST',
-    body: body,
-    redirect: 'follow'
+        method: 'POST',
+        body: formData,
+        redirect: 'follow'
     };
 
     fetch("http://206.189.91.54//api/v1/auth/", requestOptions)
