@@ -16,15 +16,13 @@ export const userLogin = (email, password) => {
             localStorage.setItem("client", JSON.stringify(response.headers.get('client')))
             localStorage.setItem("expiry", JSON.stringify(response.headers.get('expiry')))
             localStorage.setItem("uid", JSON.stringify(response.headers.get('uid')))
-            return response.json()
+            return response.json();
         })
         .then(result => {
-            if(result.success) {
-                console.log(result)
-                localStorage.setItem("userId", JSON.stringify(result.data.id))
-            } else {
-                console.log(result)
-            }
+            if(result.success === undefined)localStorage.setItem("userId", JSON.stringify(result.data.id));
+            else if(!(result.success)){console.log(result.errors)};
         })
-        .catch(error => console.log('error', error))
+        .catch(error => {
+            console.log(error)
+        });
 }
