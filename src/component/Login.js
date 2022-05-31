@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { UserLogin } from "../api/api-login.js"
+import { userLogin } from "../api/api-login.js"
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -18,7 +18,7 @@ const Login = () => {
         if(email === "" || password === "") {
             alert("Fill required fields");
         } else {
-            UserLogin(email, password);
+            userLogin(email, password);
             window.location.replace("/dashboard");
         }
     };

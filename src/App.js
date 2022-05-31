@@ -17,7 +17,12 @@ const Home = () => {
 };
 
 const Message = () => {
-  return <SendMessage />;
+  return (
+    <div>
+      <p>...hello, message...</p>
+      <SendMessage />
+    </div>
+  )
 };
 
 // messages coming from the database server

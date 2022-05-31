@@ -1,15 +1,13 @@
+import { myHeader } from './header'
+
 export const createChannelMembers = (channelName, userIds) => {
-    var myHeaders = new Headers();
-    myHeaders.append("access-token", "EbBRhHlxy_onrPLeDoxzbQ");
-    myHeaders.append("client", "YXLnTVh802pqPnrJDNfbqg");
-    myHeaders.append("expiry", "1621406884");
-    myHeaders.append("uid", "user@example.com");
+    let myHeaders = myHeader()
 
     const formData = new FormData();
     formData.append("name", channelName);
     formData.append("user_ids", userIds);
 
-    var requestOptions = {
+    let requestOptions = {
         method: 'POST',
         headers: myHeaders,
         body: formData,
