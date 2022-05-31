@@ -1,4 +1,4 @@
-import {retrieveMessage} from "../api/api-retrieve-message.js"
+import {retrieveMessage} from "../api/api-retrieve-messages.js"
 
 const RetrieveMessage = () => {
     const userId = JSON.parse(localStorage.getItem("userId"));
