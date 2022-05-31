@@ -13,7 +13,7 @@ const SendMessage = () => {
         event.preventDefault();
         sendMessage(userId, message)
         setMessage("");
-      };
+    };
 
     return(
         <div>
