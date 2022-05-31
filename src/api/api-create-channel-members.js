@@ -1,13 +1,9 @@
 export const createChannelMembers = (channelName, userIds) => {
-    const accessToken = JSON.parse(localStorage.getItem("access-token"));
-    const client = JSON.parse(localStorage.getItem("client"));
-    const expiry = JSON.parse(localStorage.getItem("expiry"));
-    const uid = JSON.parse(localStorage.getItem("uid"));
     var myHeaders = new Headers();
-    myHeaders.append("access-token", accessToken);
-    myHeaders.append("client", client);
-    myHeaders.append("expiry", expiry);
-    myHeaders.append("uid", uid);
+    myHeaders.append("access-token", "EbBRhHlxy_onrPLeDoxzbQ");
+    myHeaders.append("client", "YXLnTVh802pqPnrJDNfbqg");
+    myHeaders.append("expiry", "1621406884");
+    myHeaders.append("uid", "user@example.com");
 
     const formData = new FormData();
     formData.append("name", channelName);

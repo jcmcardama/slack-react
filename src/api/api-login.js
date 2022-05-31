@@ -19,8 +19,7 @@ export const UserLogin = (email, password) => {
             return response.json();
         })
         .then(result => {
-            if(result.success === undefined)localStorage.setItem("userId", JSON.stringify(result.data.id));
-            else if(!(result.success)){console.log(result.errors)};
+            result.success ? localStorage.setItem("userId", JSON.stringify(result.data.id)) : console.log(result.error);
         })
         .catch(error => {
             console.log(error)
