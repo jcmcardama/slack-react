@@ -1,6 +1,6 @@
 import { myHeader } from './header'
 
-export const userChannels = () => {
+export const userOwnedChannels = () => {
     let myHeaders = myHeader()
 
     let requestOptions = {
@@ -9,7 +9,7 @@ export const userChannels = () => {
         redirect: 'follow'
     };
 
-    fetch("http://206.189.91.54//api/v1/channels", requestOptions)
+    fetch("http://206.189.91.54//api/v1/channel/owned", requestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
