@@ -10,6 +10,7 @@ import {
 
 import Login from "./component/Login.js";
 import UserRegistration from "./component/UserRegistration.js";
+import SendMessage from "./component/SendMessage.js";
 
 const Home = () => {
   return <h1>Home</h1>;
