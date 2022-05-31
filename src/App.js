@@ -7,7 +7,8 @@ import {
   Link
 } from "react-router-dom";
 import './App.css';
-import SendMessage from './component/SendMessage';
+import Chat from './component/Chat';
+import RetrieveMessage from './component/RetrieveMessage';
 
 // User Registration
 // -needs email 
@@ -62,7 +63,10 @@ function App() {
               <Link to="/client">Dashboard</Link>
             </li>
             <li>
-              <Link to="/send-message">Send Message</Link>
+              <Link to="/chat">Chat</Link>
+            </li>
+            <li>
+              <Link to="/inbox">Inbox</Link>
             </li>
           </ul>
         </nav>
@@ -71,7 +75,8 @@ function App() {
         <Route path="/get-started" component={UserRegistration} />
         <Route path="/client" /> 
         <Route path="/signin" component={Login} />
-        <Route path="/send-message" component={SendMessage} />
+        <Route path="/chat" component={Chat} />
+        <Route path="/inbox" component={RetrieveMessage} />
       </Switch>
     </Router>
     </>

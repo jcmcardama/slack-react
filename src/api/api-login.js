@@ -1,15 +1,15 @@
 //LOGIN
-export const UserLogin = (email, password) => {
+export const userLogin = (email, password) => {
     const formData = new FormData();
     formData.append("email", email);
     formData.append("password", password);
 
-    var requestOptions = {
+    let requestOptions = {
         method: 'POST',
         body: formData,
         redirect: 'follow'
     };
-        
+
     fetch("http://206.189.91.54//api/v1/auth/sign_in", requestOptions)
         .then(response => {
             localStorage.setItem("access-token", JSON.stringify(response.headers.get('access-token')))

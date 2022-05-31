@@ -10,7 +10,7 @@ export const userRegistration = (email, password, passwordConfirmation) => {
     //     "password_confirmation": passwordConfirmation
     // };
 
-    var requestOptions = {
+    let requestOptions = {
         method: 'POST',
         body: formData,
         redirect: 'follow'
