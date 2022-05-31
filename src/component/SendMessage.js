@@ -21,11 +21,11 @@ const SendMessage = () => {
             <form onSubmit={submitHandler}>
                 <input
                 type="text"
-                placeholder="Enter Message here"
+                placeholder="Message..."
                 value={message}
                 onChange={messageChangeHandler} 
                 />
-                <button type="submit">Submit</button>
+                <button type="submit">Send</button>
             </form>
         </div>
     );

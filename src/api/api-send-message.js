@@ -3,6 +3,7 @@ export const sendMessage = (receiverId, message) => {
     const client = JSON.parse(localStorage.getItem("client"));
     const expiry = JSON.parse(localStorage.getItem("expiry"));
     const uid = JSON.parse(localStorage.getItem("uid"));
+    
     var myHeaders = new Headers();
     myHeaders.append("access-token", accessToken);
     myHeaders.append("client", client);
