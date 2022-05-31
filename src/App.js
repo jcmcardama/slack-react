@@ -7,6 +7,7 @@ import {
   Link
 } from "react-router-dom";
 import './App.css';
+import SendMessage from './component/SendMessage';
 
 // User Registration
 // -needs email 
@@ -60,6 +61,9 @@ function App() {
             <li>
               <Link to="/client">Dashboard</Link>
             </li>
+            <li>
+              <Link to="/send-message">Send Message</Link>
+            </li>
           </ul>
         </nav>
       </div>
@@ -67,10 +71,10 @@ function App() {
         <Route path="/get-started" component={UserRegistration} />
         <Route path="/client" /> 
         <Route path="/signin" component={Login} />
+        <Route path="/send-message" component={SendMessage} />
       </Switch>
     </Router>
     </>
->>>>>>> 3f8b3401ce0f2bb53d0626ac1b89d8c831d0ac9e
   );
 }
 
