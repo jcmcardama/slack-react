@@ -24,7 +24,7 @@ const UserRegistration = () => {
         setEmail("");
         setPassword("");
         setPasswordConfirmation("");
-      };
+    };
 
     return(
         <div>
