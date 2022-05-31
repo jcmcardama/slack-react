@@ -17,7 +17,7 @@ const Home = () => {
 };
 
 const Message = () => {
-  return <h1>Message</h1>;
+  return <SendMessage />;
 };
 
 // messages coming from the database server
@@ -57,7 +57,7 @@ const Messages = () => {
           <Message />
         </Route>
         <Route path={match.path}>
-          <h3>Please select a topic</h3>
+          <SendMessage />
         </Route>
       </Switch>
     </div>
