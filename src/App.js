@@ -11,6 +11,7 @@ import {
 import Login from "./component/Login.js";
 import UserRegistration from "./component/UserRegistration.js";
 import SendMessage from "./component/SendMessage.js";
+import AddChannel from "./component/Channel.js";
 
 const Home = () => {
   return <h1>Home</h1>;
@@ -95,6 +96,7 @@ const Channels = () => {
   return (
     <div>
       <h2>Channels</h2>
+      <AddChannel />
 
       <ul>
         {channels.map((channel) => {
@@ -116,16 +118,15 @@ const Channels = () => {
         <Route path={`${match.path}/:channelId`}>
           <Channel />
         </Route>
-        <Route path={match.path}>
-          <h3>Please select a topic</h3>
-        </Route>
+        {/* <Route path={match.path}>
+          <h3>Please select a Channel</h3>
+        </Route> */}
       </Switch>
     </div>
   );
 };
 
 const Dashboard = () => {
-  let match = useRouteMatch();
 
   return (
     <div>
