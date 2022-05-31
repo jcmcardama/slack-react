@@ -30,7 +30,7 @@ const UserRegistration = () => {
             window.location.replace("/dashboard");
         }
       };
-
+  
     return(
         <div>
             <h1>User Registration</h1>

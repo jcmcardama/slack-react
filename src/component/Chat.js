@@ -17,7 +17,6 @@ const Chat = () => {
     const submitHandler = async (event) => {
         event.preventDefault();
         let receiverId = await userIdByEmail(receiverEmail)
-        console.log(receiverId)
         sendMessage(receiverId, message)
         setMessage("")
     }
