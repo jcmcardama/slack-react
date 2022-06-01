@@ -10,7 +10,7 @@ import {
 
 import Login from "./component/Login.js";
 import UserRegistration from "./component/UserRegistration.js";
-import SendMessage from "./component/SendMessage.js";
+import Chat from "./component/Chat.js";
 import AddChannel from "./component/Channel.js";
 
 const Home = () => {
@@ -21,7 +21,7 @@ const Message = () => {
   return (
     <div>
       <p>...hello, message...</p>
-      <SendMessage />
+      <Chat />
     </div>
   )
 };
@@ -63,7 +63,7 @@ const Messages = () => {
           <Message />
         </Route>
         <Route path={match.path}>
-          <SendMessage />
+          <Chat />
         </Route>
       </Switch>
     </div>
