@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {retrieveMessage} from "../api/api-retrieve-messages.js"
 import ListMessage from "./ListMessage.js";
+import Chat from "./Chat.js";
 
 const Dashboard = () => {
     const [receiverId, setReceiverId] = useState("");
@@ -18,7 +19,8 @@ const Dashboard = () => {
 
     return(
         <div>
-            <h1>Retrieve Message</h1>
+            <h1>Direct Message</h1>
+            <h2>Retrieve Message</h2>
             <form onSubmit={submitHandler}>
                 <input
                         type="textarea"
@@ -28,6 +30,7 @@ const Dashboard = () => {
                 />
                 <button type="submit">Retrieve Message</button>
             </form>
+            <Chat />
             <ListMessage data={data}/>
         </div>
     );

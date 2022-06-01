@@ -29,6 +29,7 @@ const Chat = (prop) => {
 
     return (
         <div>
+            <h2>Send Message</h2>
             <form onSubmit={submitHandler}>
                 {/* <label htmlFor="receiver-email">To:</label>
                 <input type="text" name="receiver-email" onChange={receiverChangeHandler} /> */}
@@ -40,7 +41,6 @@ const Chat = (prop) => {
                 />
                 <button type="submit">Send</button>
             </form>
-            <h1>Send Message</h1>
         </div>
     )
 }
