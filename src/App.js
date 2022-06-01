@@ -10,7 +10,7 @@ import {
 
 import Login from "./component/Login.js";
 import UserRegistration from "./component/UserRegistration.js";
-import SendMessage from "./component/SendMessage.js";
+import SendMessage from "./component/Chat.js";
 import AddChannel from "./component/Channel.js";
 
 const Home = () => {
