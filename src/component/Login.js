@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { userLogin } from "../api/api-login.js"
+import { Route, Redirect } from "react-router-dom";
+import Dashboard from "./Dashboard";
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -17,9 +19,9 @@ const Login = () => {
         event.preventDefault();
         if(email === "" || password === "") {
             alert("Fill required fields");
-        } else {
+        }else{
             userLogin(email, password);
-            window.location.replace("/dashboard");
+            window.location.href = '/dashboard';
         }
     };
 
