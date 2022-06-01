@@ -9,8 +9,17 @@ export const userChannels = () => {
         redirect: 'follow'
     };
 
-    fetch("http://206.189.91.54//api/v1/channels", requestOptions)
+    return fetch("http://206.189.91.54//api/v1/channels", requestOptions)
         .then(response => response.json())
-        .then(result => console.log(result))
         .catch(error => console.log('error', error));
+}
+export const channels = []
+
+export const userChannelNamesAndId = async () => {
+    const channelObjArr = await userChannels()
+    const channelArr = channelObjArr.data
+    
+    for(let i = 0; i<channelArr.length; i++) {
+        channels.push({id: channelArr[i].id, name: channelArr[i].name})
+    }
 }

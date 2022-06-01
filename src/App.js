@@ -11,7 +11,8 @@ import {
 import Login from "./component/Login.js";
 import UserRegistration from "./component/UserRegistration.js";
 import Chat from "./component/Chat.js";
-import AddChannel from "./component/Channel.js";
+import AddChannel from "./component/AddChannel.js";
+import {userChannelNamesAndId, channels} from "./api/api-channels"
 
 const Home = () => {
   return <h1>Home</h1>;
@@ -26,7 +27,7 @@ const Message = () => {
   )
 };
 
-// messages coming from the database server
+//messages coming from the database server
 const messages = [
   {
     id: "q12341234",
@@ -45,11 +46,12 @@ const Messages = () => {
     <div>
       <h2>Direct Message</h2>
 
-      <ul>
+      <ul >
         {messages.map((channel) => {
+          
           return (
             <li>
-              <Link to={`${match.url}/channels/${channel.id}`}>
+              <Link key={channel.name} to={`${match.url}/channels/${channel.id}`}>
                 {" "}
                 {channel.name.toUpperCase()}
               </Link>
@@ -79,17 +81,7 @@ const Channel = () => {
   );
 };
 
-const channels = [
-  {
-    id: "q12341234",
-    name: "Batch18",
-  },
-  {
-    id: "q12341234",
-    name: "Batch1",
-  },
-];
-
+userChannelNamesAndId()
 const Channels = () => {
   let match = useRouteMatch();
 
@@ -102,7 +94,7 @@ const Channels = () => {
         {channels.map((channel) => {
           return (
             <li>
-              <Link to={`${match.url}/channels/${channel.id}`}>
+              <Link key={channel.name} to={`${match.url}/channels/${channel.id}`}>
                 {" "}
                 {channel.name.toUpperCase()}
               </Link>
