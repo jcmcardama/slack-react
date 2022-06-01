@@ -20,12 +20,17 @@ const UserRegistration = () => {
 
     const submitHandler = (event) => {
         event.preventDefault();
-        userRegistration(email, password, passwordConfirmation)
-        setEmail("");
-        setPassword("");
-        setPasswordConfirmation("");
-    };
-
+        if(email === "" || password === "" || passwordConfirmation === "") {
+            alert("Fill required fields")
+        } else {
+            userRegistration(email, password, passwordConfirmation)
+            setEmail("");
+            setPassword("");
+            setPasswordConfirmation("");
+            window.location.replace("/dashboard");
+        }
+      };
+  
     return(
         <div>
             <h1>User Registration</h1>

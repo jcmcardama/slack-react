@@ -15,9 +15,12 @@ const Login = () => {
 
     const submitHandler = (event) => {
         event.preventDefault();
-        userLogin(email, password);
-        setEmail('')
-        setPassword('')
+        if(email === "" || password === "") {
+            alert("Fill required fields");
+        } else {
+            userLogin(email, password);
+            window.location.replace("/dashboard");
+        }
     };
 
     return (

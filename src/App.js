@@ -1,85 +1,182 @@
-import Login from './component/Login';
-import UserRegistration from './component/UserRegistration';
+import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  useRouteMatch,
+  useParams,
 } from "react-router-dom";
-import './App.css';
-import Chat from './component/Chat';
-import RetrieveMessage from './component/RetrieveMessage';
 
-// User Registration
-// -needs email 
-// -password
-// -password confirmation
+import Login from "./component/Login.js";
+import UserRegistration from "./component/UserRegistration.js";
+import SendMessage from "./component/SendMessage.js";
+import AddChannel from "./component/Channel.js";
 
-// Login
-// -needs email
-// -needs password
+const Home = () => {
+  return <h1>Home</h1>;
+};
 
-// Send Message
-// -receiver id
-// -receiver class
-// -body
+const Message = () => {
+  return (
+    <div>
+      <p>...hello, message...</p>
+      <SendMessage />
+    </div>
+  )
+};
 
-// Retrieve Messages
-// -sender id 
-// -receiver class 
-// -receiver id 
+// messages coming from the database server
+const messages = [
+  {
+    id: "q12341234",
+    name: "Edcel",
+  },
+  {
+    id: "q12341234",
+    name: "Carlo",
+  },
+];
 
-// Create Channel with members
-// -name of channel 
-// -user id of creator 
+const Messages = () => {
+  let match = useRouteMatch();
 
-// Get all users channels
+  return (
+    <div>
+      <h2>Direct Message</h2>
 
+      <ul>
+        {messages.map((channel) => {
+          return (
+            <li>
+              <Link to={`${match.url}/channels/${channel.id}`}>
+                {" "}
+                {channel.name.toUpperCase()}
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
 
-// Get channel details via channel ID
+      <Switch>
+        <Route path={`${match.path}/:messageId`}>
+          <Message />
+        </Route>
+        <Route path={match.path}>
+          <SendMessage />
+        </Route>
+      </Switch>
+    </div>
+  );
+};
 
-// Add member to a channel
-// -id 
-// -member id 
+const Channel = () => {
+  let { channelId, messageId } = useParams();
+  return (
+    <h3>
+      Requested Channel ID: {channelId}, {messageId}
+    </h3>
+  );
+};
 
-// List of All Users
-// Get all users owned channels
-// Recently DMs
+const channels = [
+  {
+    id: "q12341234",
+    name: "Batch18",
+  },
+  {
+    id: "q12341234",
+    name: "Batch1",
+  },
+];
+
+const Channels = () => {
+  let match = useRouteMatch();
+
+  return (
+    <div>
+      <h2>Channels</h2>
+      <AddChannel />
+
+      <ul>
+        {channels.map((channel) => {
+          return (
+            <li>
+              <Link to={`${match.url}/channels/${channel.id}`}>
+                {" "}
+                {channel.name.toUpperCase()}
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+
+      <Switch>
+        <Route path={`${match.path}/:channelId/:messageId`}>
+          <Message />
+        </Route>
+        <Route path={`${match.path}/:channelId`}>
+          <Channel />
+        </Route>
+        {/* <Route path={match.path}>
+          <h3>Please select a Channel</h3>
+        </Route> */}
+      </Switch>
+    </div>
+  );
+};
+
+const Dashboard = () => {
+
+  return (
+    <div>
+      <h2>Dashboard</h2>
+
+      <Channels />
+      <Messages />
+    </div>
+  );
+};
+
+const NotFound = () => {
+  return (
+    <div>
+      <h1>Page cannot be found.</h1>
+    </div>
+  );
+};
 
 function App() {
   return (
-    <>
     <Router>
       <div>
         <nav>
           <ul>
             <li>
-              <Link to="/signin">Signin</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/get-started">Create an account</Link>
+              <Link to="/signin">Sign in</Link>
             </li>
             <li>
-              <Link to="/client">Dashboard</Link>
+              <Link to="/create-account">Create Account</Link>
             </li>
             <li>
-              <Link to="/chat">Chat</Link>
-            </li>
-            <li>
-              <Link to="/inbox">Inbox</Link>
+              <Link to="/dashboard">Dashboard</Link>
             </li>
           </ul>
         </nav>
+        <Switch>
+          <Route path="/signin" component={Login} />
+          <Route path="/create-account" component={UserRegistration} />
+          <Route path="/messages" component={Messages} />
+          <Route path="/channels" component={Channels} />
+          <Route path="/dashboard" component={Dashboard} />
+          <Route exact path="/" component={Home} />
+          <Route path="*" component={NotFound} />
+        </Switch>
       </div>
-      <Switch>
-        <Route path="/get-started" component={UserRegistration} />
-        <Route path="/client" /> 
-        <Route path="/signin" component={Login} />
-        <Route path="/chat" component={Chat} />
-        <Route path="/inbox" component={RetrieveMessage} />
-      </Switch>
     </Router>
-    </>
   );
 }
 
