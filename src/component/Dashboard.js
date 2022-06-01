@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {retrieveMessage} from "../api/api-retrieve-messages.js"
+import ListMessage from "./ListMessage.js";
 
 const Dashboard = () => {
     const [receiverId, setReceiverId] = useState("");
@@ -11,16 +12,8 @@ const Dashboard = () => {
 
     const submitHandler = (event) => {
         event.preventDefault();
-        retrieveMessage(receiverId, "Channel");
+        retrieveMessage(receiverId, "User");
         setData(JSON.parse(localStorage.getItem("dataMessages")));
-    };
-
-    const ListMessage = () => {
-        return <>{data.map((item, index) => (
-          <div key={index}>
-            {item.body}
-          </div>
-        ))}</>;
     };
 
     return(
@@ -35,7 +28,7 @@ const Dashboard = () => {
                 />
                 <button type="submit">Retrieve Message</button>
             </form>
-            <ListMessage />
+            <ListMessage data={data}/>
         </div>
     );
 };

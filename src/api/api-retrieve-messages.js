@@ -14,7 +14,7 @@ export const retrieveMessage = (receiverId, receiverClass) => {
       return response.json();
     })
     .then(result => {
-      localStorage.setItem("dataMessages", JSON.stringify(result));
+      localStorage.setItem("dataMessages", JSON.stringify(result.data));
     })
     .catch(error => console.log('error', error));
 };

@@ -23,8 +23,6 @@ const Chat = (prop) => {
 
     const submitHandler = (event) => {
         event.preventDefault();
-        console.log(prop.receiverID);
-        console.log(prop.receiverClass);
         sendMessage(prop.receiverId, prop.receiverClass, message)
         setMessage("")
     }
