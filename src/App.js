@@ -82,6 +82,7 @@ const Channel = () => {
 };
 
 userChannelNamesAndId()
+
 const Channels = () => {
   let match = useRouteMatch();
 
@@ -93,7 +94,7 @@ const Channels = () => {
       <ul>
         {channels.map((channel) => {
           return (
-            <li>
+            <li onClick={() => console.log(`id: ${channel.id}, class: 'Channel'`)}>
               <Link key={channel.name} to={`${match.url}/channels/${channel.id}`}>
                 {" "}
                 {channel.name.toUpperCase()}
