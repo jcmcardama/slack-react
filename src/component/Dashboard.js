@@ -1,7 +1,8 @@
 import { useState } from "react";
-import {retrieveMessage} from "../api/api-retrieve-messages.js"
+import {listMessage} from "../api/api-retrieve-messages.js"
 import ListMessage from "./ListMessage.js";
 import Chat from "./Chat.js";
+import ChatTitle from "./ChatTitle.js";
 
 const Dashboard = () => {
     const [receiverId, setReceiverId] = useState("");
@@ -11,16 +12,14 @@ const Dashboard = () => {
         setReceiverId(event.target.value)
     }
 
-    const submitHandler = (event) => {
+    const submitHandler = async(event) => {
         event.preventDefault();
-        retrieveMessage(receiverId, "User");
-        setData(JSON.parse(localStorage.getItem("dataMessages")));
+        setData(await listMessage(receiverId, "Channel"));
     };
 
     return(
         <div>
-            <h1>Direct Message</h1>
-            <h2>Retrieve Message</h2>
+            <ChatTitle data={data}/>
             <form onSubmit={submitHandler}>
                 <input
                         type="textarea"
