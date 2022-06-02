@@ -94,7 +94,7 @@ const Dashboard = (prop) => {
 
     return(
         <div>
-            <ChatTitle data={data} class={prop.receiverClass}/>
+            <ChatTitle data={data} id={prop.receiverId} class={prop.receiverClass}/>
             <ListMessage data={data}/>
             <Channels />
             <Messages />
