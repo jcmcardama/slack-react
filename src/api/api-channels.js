@@ -19,7 +19,10 @@ export const userChannelNamesAndId = async () => {
     const channelObjArr = await userChannels()
     const channelArr = channelObjArr.data
     
-    for(let i = 0; i<channelArr.length; i++) {
-        channels.push({id: channelArr[i].id, name: channelArr[i].name})
+    if(channelArr === undefined) return 
+    else {
+        for(let i = 0; i<channelArr.length; i++) {
+            channels.push({id: channelArr[i].id, name: channelArr[i].name})
+        }
     }
 }
