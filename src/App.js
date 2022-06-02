@@ -3,7 +3,9 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  useRouteMatch,
+
 } from "react-router-dom";
 
 import Login from "./component/Login.js";
@@ -44,7 +46,7 @@ const Messages = () => {
 
       <Switch>
         <Route path={`${match.path}/:messageId`}>
-          <Message />
+          <Messages />
         </Route>
         <Route path={match.path}>
           <Chat />
@@ -79,10 +81,10 @@ const Channels = () => {
 
       <Switch>
         <Route path={`${match.path}/:channelId/:messageId`}>
-          <Message />
+          <Messages />
         </Route>
         <Route path={`${match.path}/:channelId`}>
-          <Channel />
+          <Channels />
         </Route>
       </Switch>
     </div>
