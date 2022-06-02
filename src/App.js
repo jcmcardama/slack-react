@@ -9,6 +9,7 @@ import {
 import Login from "./component/Login.js";
 import UserRegistration from "./component/UserRegistration.js";
 import Dashboard from "./component/Dashboard.js";
+import Chat from "./component/Chat.js";
 import {userChannelNamesAndId} from "./api/api-channels";
 import {fetchRecentMessages} from './api/api-recentDm';
 
@@ -45,12 +46,16 @@ function App() {
             <li>
               <Link to="/dashboard">Dashboard</Link>
             </li>
+            <li>
+              <Link to="/chat">Chat</Link>
+            </li>
           </ul>
         </nav>
         <Switch>
           <Route path="/signin" component={Login} />
           <Route path="/create-account" component={UserRegistration} />
           <Route path="/dashboard" component={Dashboard} />
+          <Route path="/chat" component={Chat} />
           <Route exact path="/" component={Home} />
           <Route path="*" component={NotFound} />
         </Switch>

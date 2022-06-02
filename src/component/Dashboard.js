@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import {retrieveMessage} from "../api/api-retrieve-messages.js"
 import ListMessage from "./ListMessage.js";
 import ChatTitle from "./ChatTitle.js";
+import AddChannel from './AddChannel'
 import {listMessage} from "../api/api-retrieve-messages.js";
 import Chat from "./Chat.js";
 import {
@@ -12,6 +13,7 @@ import {
   } from "react-router-dom";
 import {channels} from "../api/api-channels";
 import {recentMessages} from '../api/api-recentDm';
+import {channelDetails} from '../api/api-channel-details'
 
 
 //messages coming from the database server
@@ -22,7 +24,6 @@ const Messages = () => {
   return (
     <div>
       <h2>Direct Message</h2>
-
       <ul >
         {recentMessages.map((message) => {
           
@@ -54,11 +55,11 @@ const Channels = () => {
 
   return (
     <div>
-      <h2>Channels</h2>
+      <h2>Channels<AddChannel/></h2>
       <ul>
         {channels.map((channel) => {
           return (
-            <li key={channel.name} onClick={() => console.log(`id: ${channel.id}, class: 'Channel'`)}>
+            <li key={channel.name} onClick={() => console.log(`id: ${channel.id}, class: 'Channel', Members: ${channelDetails(channel.id)}`)}>
               <Link to={`${match.url}/channels/${channel.id}`}>
                 {" "}
                 {channel.name.toUpperCase()}
