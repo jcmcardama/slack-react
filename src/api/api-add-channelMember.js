@@ -1,4 +1,4 @@
-export const createChannelMembers = (channelName, userIds) => {
+export const postAddChannelMember = (channelId, memberId) => {
     const userHeader = () => {
         const header = {
             accessToken: JSON.parse(localStorage.getItem("access-token")),
@@ -23,20 +23,20 @@ export const createChannelMembers = (channelName, userIds) => {
         return myHeaders
     }
 
-    let channelBody = {
-        "name": channelName,
-        "user_ids": userIds
+    let addMemberBody = {
+        "id": channelId,
+        "member_id": memberId
     }
 
-    let requestOptions = {
+    var requestOptions = {
         method: 'POST',
         headers: myHeader(),
-        body: JSON.stringify(channelBody),
+        body: JSON.stringify(addMemberBody),
         redirect: 'follow'
     };
 
-    fetch("http://206.189.91.54//api/v1/channels", requestOptions)
+    fetch("http://206.189.91.54//api/v1/channel/add_member", requestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
-};
+}

@@ -8,24 +8,15 @@ import {
 
 import Login from "./component/Login.js";
 import UserRegistration from "./component/UserRegistration.js";
-import Dashboard from "./component/Dashboard.js";
+import Panel from "./component/Panel.js";
+import NotFound from "./component/NotFound.js";
+import Home from "./component/Home.js";
 import {userChannelNamesAndId} from "./api/api-channels";
 import {fetchRecentMessages} from './api/api-recentDm';
 
+//init user messages and channels
 fetchRecentMessages()
 userChannelNamesAndId()
-
-const Home = () => {
-  return <Login />;
-};
-
-const NotFound = () => {
-  return (
-    <div>
-      <h1>Page cannot be found.</h1>
-    </div>
-  );
-};
 
 function App() {
   return (
@@ -37,14 +28,21 @@ function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/dashboard">Dashboard</Link>
+              <Link to="/signin">Sign in</Link>
+            </li>
+            <li>
+              <Link to="/create-account">Create Account</Link>
+            </li>
+            <li>
+              <Link to="/panel">Panel</Link>
+
             </li>
           </ul>
         </nav>
         <Switch>
           <Route path="/signin" component={Login} />
           <Route path="/create-account" component={UserRegistration} />
-          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/panel" component={Panel} />
           <Route exact path="/" component={Home} />
           <Route path="*" component={NotFound} />
         </Switch>

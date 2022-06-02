@@ -18,5 +18,5 @@ export const userIdByEmail = async (email) => {
     let user = usersArray.data.filter(userData => {
         return userData.uid === email
     })
-    return user.length === 0 ? null : user[0].id
+    return user.length === 0 ? 'User not found!' : user[0].id
 }
