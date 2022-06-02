@@ -1,4 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import {retrieveMessage} from "../api/api-retrieve-messages.js"
+import ListMessage from "./ListMessage.js";
+import ChatTitle from "./ChatTitle.js";
 import {listMessage} from "../api/api-retrieve-messages.js";
 import Chat from "./Chat.js";
 import {
@@ -77,21 +80,22 @@ const Channels = () => {
   );
 };
 
-const Dashboard = () => {
-    const [receiverId, setReceiverId] = useState("");
+
+const Dashboard = (prop) => {
     const [data, setData] = useState([]);
 
-    const receiverChangeHandler = (event) => {
-        setReceiverId(event.target.value)
-    }
-
-    const submitHandler = async(event) => {
-        event.preventDefault();
-        setData(await listMessage(receiverId, "Channel"));
-    };
+    useEffect(() => {
+        async function listMessage(receiverId, receiverClass){
+            const messageArray = await retrieveMessage(receiverId, receiverClass);
+            setData(messageArray);
+        }
+        listMessage(prop.receiverId, prop.receiverClass);
+    });
 
     return(
         <div>
+            <ChatTitle data={data} class={prop.receiverClass}/>
+            <ListMessage data={data}/>
             <Channels />
             <Messages />
         </div>

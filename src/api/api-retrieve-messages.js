@@ -14,7 +14,7 @@ export const retrieveMessage = (receiverId, receiverClass) => {
     .catch(error => console.log('error', error));
 };
 
-export const listMessage = async (receiverId, receiverClass) => {
-  let messageArray = await retrieveMessage(receiverId, receiverClass);
-  return messageArray;
-}
+// export const listMessage = async (receiverId, receiverClass) => {
+//   let messageArray = await retrieveMessage(receiverId, receiverClass);
+//   return messageArray;
+// }
