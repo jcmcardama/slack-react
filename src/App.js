@@ -9,9 +9,84 @@ import {
 import Login from "./component/Login.js";
 import UserRegistration from "./component/UserRegistration.js";
 import Dashboard from "./component/Dashboard.js";
+import Chat from "./component/Chat.js";
+import AddChannel from "./component/AddChannel.js";
+import {userChannelNamesAndId, channels} from "./api/api-channels";
+import {fetchRecentMessages, recentMessages} from './api/api-recentDm';
 
 const Home = () => {
   return <h1>Home</h1>;
+};
+
+//messages coming from the database server
+fetchRecentMessages()
+
+const Messages = () => {
+  let match = useRouteMatch();
+  
+  return (
+    <div>
+      <h2>Direct Message</h2>
+
+      <ul >
+        {recentMessages.map((message) => {
+          
+          return (
+            <li key={message.key} onClick={() => console.log(`id: ${message.id}, class: 'User'`)}>
+              <Link  to={`${match.url}/channels/${message.id}`}>
+                {" "}
+                {message.uid}
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+
+      <Switch>
+        <Route path={`${match.path}/:messageId`}>
+          <Message />
+        </Route>
+        <Route path={match.path}>
+          <Chat />
+        </Route>
+      </Switch>
+    </div>
+  );
+};
+
+userChannelNamesAndId()
+
+const Channels = () => {
+  let match = useRouteMatch();
+
+  return (
+    <div>
+      <h2>Channels</h2>
+      <AddChannel />
+
+      <ul>
+        {channels.map((channel) => {
+          return (
+            <li key={channel.name} onClick={() => console.log(`id: ${channel.id}, class: 'Channel'`)}>
+              <Link to={`${match.url}/channels/${channel.id}`}>
+                {" "}
+                {channel.name.toUpperCase()}
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+
+      <Switch>
+        <Route path={`${match.path}/:channelId/:messageId`}>
+          <Message />
+        </Route>
+        <Route path={`${match.path}/:channelId`}>
+          <Channel />
+        </Route>
+      </Switch>
+    </div>
+  );
 };
 
 const NotFound = () => {
