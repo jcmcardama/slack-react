@@ -195,6 +195,24 @@
   background-color: #fff;
 }
 
+.register-link {
+  display: flex;
+  justify-content: center;
+  font-size: .9rem;
+}
+.register-link a {
+  text-decoration: none;
+  color: #356cf1;
+  font-weight: 600;
+}
+.register-link a:visited {
+  text-decoration: none;
+}
+.register-link a:hover {
+  color: #356cf1;
+  text-decoration: underline;
+}
+
 
 /* FOOTER */
 .auth-footer {

@@ -16,7 +16,7 @@ fetchRecentMessages()
 userChannelNamesAndId()
 
 const Home = () => {
-  return <h1>Home</h1>;
+  return <Login />;
 };
 
 const NotFound = () => {
@@ -38,9 +38,6 @@ function App() {
             </li>
             <li>
               <Link to="/signin">Sign in</Link>
-            </li>
-            <li>
-              <Link to="/create-account">Create Account</Link>
             </li>
             <li>
               <Link to="/dashboard">Dashboard</Link>
