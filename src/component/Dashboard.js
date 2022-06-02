@@ -1,7 +1,7 @@
 import { useState } from "react";
 import {listMessage} from "../api/api-retrieve-messages.js"
 import ListMessage from "./ListMessage.js";
-import ChatTitle from "./ChatTitle.js";
+import Chat from "./Chat.js";
 
 const Dashboard = () => {
     const [receiverId, setReceiverId] = useState("");
