@@ -35,6 +35,7 @@ function App() {
             </li>
             <li>
               <Link to="/panel">Panel</Link>
+
             </li>
           </ul>
         </nav>
