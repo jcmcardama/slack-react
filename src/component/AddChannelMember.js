@@ -7,7 +7,8 @@ const AddChannelMember = ({ channelId }) => {
 
   const submitHandler = async (e) => {
     e.preventDefault()
-    const memberId = await userIdByEmail(memberEmail)
+    const trimEmail = memberEmail.trim()
+    const memberId = await userIdByEmail(trimEmail)
     postAddChannelMember(channelId, memberId)
   }
 
