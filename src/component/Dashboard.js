@@ -1,33 +1,22 @@
-import { useState } from "react";
-import {listMessage} from "../api/api-retrieve-messages.js"
+import { useState, useEffect } from "react";
+import {retrieveMessage} from "../api/api-retrieve-messages.js"
 import ListMessage from "./ListMessage.js";
 import ChatTitle from "./ChatTitle.js";
 
-const Dashboard = () => {
-    const [receiverId, setReceiverId] = useState("");
+const Dashboard = (prop) => {
     const [data, setData] = useState([]);
 
-    const receiverChangeHandler = (event) => {
-        setReceiverId(event.target.value)
-    }
-
-    const submitHandler = async(event) => {
-        event.preventDefault();
-        setData(await listMessage(receiverId, "Channel"));
-    };
+    useEffect(() => {
+        async function listMessage(receiverId, receiverClass){
+            const messageArray = await retrieveMessage(receiverId, receiverClass);
+            setData(messageArray);
+        }
+        listMessage(prop.receiverId, prop.receiverClass);
+    });
 
     return(
         <div>
-            <ChatTitle data={data}/>
-            <form onSubmit={submitHandler}>
-                <input
-                        type="textarea"
-                        placeholder="Receiver id"
-                        value={receiverId}
-                        onChange={receiverChangeHandler}
-                />
-                <button type="submit">Retrieve Message</button>
-            </form>
+            <ChatTitle data={data} class={prop.receiverClass}/>
             <ListMessage data={data}/>
         </div>
     );
