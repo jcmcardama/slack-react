@@ -5,6 +5,7 @@ const RecentDirectMessages = () => {
     <div>
       <h2>Direct Message</h2>
       <RecentDmList />
+      //insert chat component here
       {/* <Switch>
         <Route path={`${match.path}/:messageId`}>
           <Messages />

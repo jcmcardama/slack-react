@@ -23,6 +23,7 @@ const ChannelList = () => {
                             </Link>
                         </li>
                         <AddChannelMember channelId={channel.id}/>
+                        //insert chat component here
                     </>
                 );
             })}
