@@ -61,14 +61,14 @@ const Login = () => {
                 <input
                 className="input-auth"
                 type="text"
-                placeholder="Email"
+                placeholder="name@work-email.com"
                 value={email}
                 onChange={emailChangeHandler} required
                 />
                 <input
                 className="input-auth"
                 type="password"
-                placeholder="Password"
+                placeholder="Pgitassword"
                 value={password}
                 onChange={passwordChangeHandler} 
                 required
