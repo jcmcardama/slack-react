@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { userLogin } from "../api/api-login.js"
+import { NavLink } from 'react-router-dom'
 import { FiGlobe, FiChevronDown } from "react-icons/fi";
 import { FcGoogle } from 'react-icons/fc'
 import { AiFillApple } from 'react-icons/ai'
@@ -75,6 +76,9 @@ const Login = () => {
                 />
                 <button className="auth-button" type="submit">Submit</button>
             </form>
+            <div className="register-link">
+                <p>New to Slack? <NavLink to={'./create-account'}>Create an account</NavLink></p>
+            </div>
             {/* Footer */}
             <footer className='auth-footer'>
                 <div>

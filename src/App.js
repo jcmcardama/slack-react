@@ -14,7 +14,7 @@ import Chat from "./component/Chat.js";
 import AddChannel from "./component/Channel.js";
 
 const Home = () => {
-  return <h1>Home</h1>;
+  return <Login />;
 };
 
 const Message = () => {
@@ -157,9 +157,6 @@ function App() {
             </li>
             <li>
               <Link to="/signin">Sign in</Link>
-            </li>
-            <li>
-              <Link to="/create-account">Create Account</Link>
             </li>
             <li>
               <Link to="/dashboard">Dashboard</Link>
