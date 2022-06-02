@@ -2,9 +2,8 @@ import { useState } from "react"
 import { userLogin } from "../api/api-login.js"
 import { NavLink } from 'react-router-dom'
 import { FiGlobe, FiChevronDown } from "react-icons/fi";
-import { FcGoogle } from 'react-icons/fc'
-import { AiFillApple } from 'react-icons/ai'
-
+import { FcGoogle } from 'react-icons/fc';
+import { AiFillApple } from 'react-icons/ai';
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -22,9 +21,9 @@ const Login = () => {
         event.preventDefault();
         if(email === "" || password === "") {
             alert("Fill required fields");
-        } else {
+        }else{
             userLogin(email, password);
-            window.location.replace("/dashboard");
+            window.location.href = '/dashboard';
         }
     };
 
