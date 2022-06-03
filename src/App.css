@@ -514,10 +514,11 @@
   font-size: 2rem;
 }
 
-.chat-container {
+/* .chat-container {
   display: flex;
   flex-direction: column-reverse;
-}
+  overflow-y: scroll;
+} */
 
 .chat-title {
   display: flex;
@@ -531,6 +532,8 @@
 }
 
 .chat-messages {
+  display: flex;
+  flex-direction: column-reverse;
   overflow-y: scroll;
   height: 80vh;
   padding: 20px;
