@@ -1,29 +1,16 @@
-import { Link, useRouteMatch } from "react-router-dom";
+
 import { channels } from "../api/api-channels";
-import {channelDetails} from '../api/api-channel-details'
-import AddChannelMember from "./AddChannelMember";
+import ItemChannel from "./ItemChannel";
+import { useState } from "react";
+
 
 const ChannelList = () => {
-    let match = useRouteMatch();
-
+    const [clickedID, setClickID] = useState(undefined)
     return (
         <ul>
             {channels.map((channel) => {
                 return (
-                    <>
-                        <li
-                            key={channel.name}
-                            onClick={() => {
-                                console.log(`id: ${channel.id}, class: 'Channel'`,channelDetails(channel.id))
-                            }}
-                        >
-                            <Link to={`${match.url}/channels/${channel.id}`}>
-                                {" "}
-                                {channel.name.toUpperCase()}
-                            </Link>
-                        </li>
-                        <AddChannelMember channelId={channel.id}/>
-                    </>
+                    <ItemChannel clickedId={clickedID} changeClickStatus={setClickID} channelId={channel.id} channelName={channel.name}/>
                 );
             })}
         </ul>
