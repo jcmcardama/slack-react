@@ -17,7 +17,7 @@ const RecentDmList = ({clickedId, changeClickStatus}) => {
             onClick={() => {
               changeClickStatus(message.id)
               }}>
-            <img src="https://a.slack-edge.com/80588/marketing/img/avatars/slackbot/avatar-slackbot@2x.png"/>
+            <img src="https://a.slack-edge.com/80588/marketing/img/avatars/slackbot/avatar-slackbot@2x.png" alt={`dp pic ${message.key}`}/>
             <Link to={`${match.url}/channels/${message.id}`}>
               {" "}
               { 

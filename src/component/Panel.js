@@ -6,7 +6,7 @@ import {
   FiAtSign,
   FiMoreVertical
 } from 'react-icons/fi'
-import { BsChatText, BsHash } from 'react-icons/bs'
+import { BsChatText } from 'react-icons/bs'
 import {
   IoChevronForwardOutline,
   IoChevronDownOutline,
