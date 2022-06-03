@@ -359,13 +359,13 @@
   align-items: center;
   line-height: 1.8;
 }
-.channels li:hover,
-.direct-messages li:hover {
+.channels:hover,
+.direct-messages:hover {
   background-color: var(--search-bar);
   font-weight: 500;
 }
-.channels li:active,
-.direct-messages li:active {
+.channels:active,
+.direct-messages:active {
   background-color: rgb(18, 99, 163);
 }
 .channels span,
@@ -524,6 +524,8 @@
 
 .sender {
   font-weight: 700;
+  display: flex;
+  align-items: center;
 }
 
 .time {
@@ -549,3 +551,14 @@
 polyline, path {
   stroke:inherit;
   }
+.profile-pic {
+  height: 50px !important;
+  width: 50px !important;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.direct-messages {
+  display: flex;
+  align-items: center;
+}
