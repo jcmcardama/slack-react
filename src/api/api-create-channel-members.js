@@ -36,7 +36,12 @@ export const createChannelMembers = (channelName, userIds) => {
     };
 
     fetch("http://206.189.91.54//api/v1/channels", requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(result))
+        .then(response => response.json())
+        .then(result => {
+            if(result.data !== undefined){
+                window.location.href = '/panel';
+            }
+            else if(!(result.success)){alert(result.errors)};
+        })
         .catch(error => console.log('error', error));
 };

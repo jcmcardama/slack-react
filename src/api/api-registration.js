@@ -18,6 +18,8 @@ export const userRegistration = (email, password, passwordConfirmation) => {
 
     fetch("http://206.189.91.54//api/v1/auth/", requestOptions)
         .then(response => response.json())
-        .then(result => console.log(result))
+        .then(result => {
+            result.status === "success" ? window.location.href = '/signin' : alert(result.errors.full_messages[0])
+        })
         .catch(error => console.log('error', error));
 };

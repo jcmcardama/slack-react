@@ -9,7 +9,9 @@ import {
 } from 'react-icons/io5'
 import ChannelList from "./ChannelList"
 import AddButton from './AddButton'
-import { useHistory, /*useParams,*/ Link } from 'react-router-dom'
+import { BsChatText } from 'react-icons/bs'
+import { useHistory, /*useParams,*/ NavLink, Link } from 'react-router-dom'
+import RecentDirectMessages from "./RecentDirectMessages"
 import RecentDmList from './RecentDmList'
 import AddChannel from './AddChannel'
 

@@ -28,7 +28,6 @@ const UserRegistration = () => {
             setEmail("");
             setPassword("");
             setPasswordConfirmation("");
-            window.location.href = '/signin';
         }
       };
   
