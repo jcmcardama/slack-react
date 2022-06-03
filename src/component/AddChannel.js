@@ -2,7 +2,7 @@ import { createChannelMembers } from '../api/api-create-channel-members'
 import { useState } from 'react'
 import { userIdByEmail } from '../api/api-users'
 
-const AddChannel = () => {
+const AddChannel = ({addChannel, changeAddChannel}) => {
   const [channelName, setChannelName] = useState('')
   const [memberEmails, setMemberEmails] = useState('')
 
@@ -16,6 +16,7 @@ const AddChannel = () => {
       membersIds.push(await userIdByEmail(trimMemberEmails[i]))
     }
     createChannelMembers(channelName, membersIds)
+    changeAddChannel(false)
   }
 
   return (
@@ -32,7 +33,7 @@ const AddChannel = () => {
           placeholder="Member's email"
           onChange={((e) => setMemberEmails(e.target.value))} />
 
-        <button type="submit">Add Channel</button>
+        <button type="submit" >Add Channel</button>
       </form>
     </>
   )

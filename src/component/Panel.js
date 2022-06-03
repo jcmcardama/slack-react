@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import { 
-  FiAtSign, 
-  FiMoreVertical, 
   FiPlus, 
   FiEdit, 
   FiChevronDown } from 'react-icons/fi'
 import {
-  IoChatbubblesOutline,
   IoChevronForwardOutline,
   IoChevronDownOutline,
 } from 'react-icons/io5'
+import { useHistory, Link } from 'react-router-dom'
+import ChannelList from "./ChannelList"
+import AddButton from './AddButton'
 import { BsChatText } from 'react-icons/bs'
 import { useHistory, /*useParams,*/ NavLink, Link } from 'react-router-dom'
 import Channels from "./Channels"
@@ -18,30 +18,18 @@ import RecentDmList from './RecentDmList'
 import AddChannel from './AddChannel'
 
 const Panel = () => {
-
   let navigate = useHistory()
   // let { uid } = useParams()
 
-  const [showChannelList, setShowChannelList] = useState(true)
-  const [showRecentDmList, setShowRecentDmList] = useState(true)
+  const [showChannelList, setShowChannelList] = useState(false)
+  const [showRecentDmList, setShowRecentDmList] = useState(false)
+  const [addChannel, setAddChannel] = useState(false)
 
 
   // CREATE A FUNCTION TO DISPLAY CHANNEL LIST
   // const displayChannels = channels
-  
-
-  const staticList = [
-    { title: 'Threads', icon: <BsChatText /> },
-    { title: 'All DMs', icon: <IoChatbubblesOutline /> },
-    { title: 'Mentions & reactions', icon: <FiAtSign /> },
-    { title: 'More', icon: <FiMoreVertical /> },
-  ]
-
   return (
     <>
-        <Channels />
-        <RecentDirectMessages />
-
         <nav className="sidebar-container">
           {/* Header */}
           <div className="sidebar-header">
@@ -57,17 +45,6 @@ const Panel = () => {
 
           {/* Main Nav */}
           <ul className="sidebar-menu">
-            {staticList.map((element, index) => {
-              return (
-                <li className="menu-options" key={index}>
-                  {element.icon}
-                  <NavLink to={'/*'}>
-                    <span>{element.title}</span>
-                  </NavLink>
-                </li>
-              )
-            })}
-
             <li className="channels-dropdown">
               {/* CHANNEL LIST DROPDOWN */}
               <div className="channels-dropdown-header">
@@ -81,14 +58,10 @@ const Panel = () => {
                   />
                 )}
                 <span>Channels</span>
-                <div className="sidebar-add-icon">
-                  <FiPlus onClick={AddChannel} 
-                  title='channel-add-btn'/>
-                </div>
+                <AddButton addChannel={addChannel} changeAddChannel={setAddChannel}/>
               </div>
-              {showChannelList ? (
-                <ul className="channels">{/* displayChannels */}</ul>
-              ) : null}
+              { addChannel ? <AddChannel addChannel={addChannel} changeAddChannel={setAddChannel} /> : null}
+              {showChannelList ? <ChannelList /> : null}
             </li>
 
             {/* DIRECT MESSAGES DROPDOWN */}
