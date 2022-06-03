@@ -1,9 +1,12 @@
 import {channelDetails} from '../api/api-channel-details'
 import { Link, useRouteMatch } from "react-router-dom";
 import AddChannelMember from "./AddChannelMember";
+import { useState } from 'react';
+import AddButton from './AddButton';
 
 const ItemChannel = ({clickedId, changeClickStatus, channelId, channelName}) => {
     let match = useRouteMatch();
+
     const showData = () => {
         console.log(`id: ${channelId}, class: 'Channel'`, channelDetails(channelId))
     }
@@ -21,8 +24,8 @@ const ItemChannel = ({clickedId, changeClickStatus, channelId, channelName}) => 
                     {channelName.toUpperCase()}
                 </Link>
             </li>
-            {clickedId === channelId ? <AddChannelMember channelId={channelId} /> : null}
-            {clickedId === channelId ? <h3>Insert Chat Here</h3> : null}
+
+            { clickedId === channelId? <AddChannelMember channelId={channelId} /> : null}
         </>
     )
 }

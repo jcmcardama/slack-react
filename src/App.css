@@ -382,3 +382,17 @@
   color: #ffffff;
   text-decoration: none;
 }
+
+
+/* add channel form styles */
+.addChannelForm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 16px;
+}
+
+.addChannelBtn {
+  background-color: rgba(250, 250, 250, .5);
+  cursor: pointer;
+}

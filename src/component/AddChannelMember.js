@@ -1,8 +1,10 @@
 import { postAddChannelMember } from '../api/api-add-channelMember.js'
 import { userIdByEmail } from '../api/api-users'
 import { useState } from 'react'
+// import CloseButton from './CloseButton.js'
 
-const AddChannelMember = ({ channelId }) => {
+const AddChannelMember = ({ channelId }) => { 
+
   const [memberEmail, setMemberEmail] = useState('')
 
   const submitHandler = async (e) => {
@@ -16,7 +18,7 @@ const AddChannelMember = ({ channelId }) => {
     <>
       <form onSubmit={submitHandler}>
         <input type="text" placeholder="Member email" onChange={(e) => setMemberEmail(e.target.value)} />
-        <button type="submit">Add Member</button>
+        {/* <CloseButton addChannel={addChannel} changeAddChannel={changeAddChannel}/> */}
       </form>
     </>
   )
