@@ -18,8 +18,9 @@ const ItemChannel = ({clickedId, changeClickStatus, channelId, channelName}) => 
                     showData()
                     changeClickStatus(channelId)
                 }}
+                className='channel-list'
             >
-                <Link to={`${match.url}/channels/${channelId}`}>
+                <Link to={`${match.url}/channels/${channelId}`} className='channel-name'>
                     {" "}
                     {channelName.toUpperCase()}
                 </Link>

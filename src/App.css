@@ -396,3 +396,33 @@
   background-color: rgba(250, 250, 250, .5);
   cursor: pointer;
 }
+
+/* channel list */
+.channel-container {
+  height: 40vh;
+  overflow-y: scroll;
+}
+
+.channel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.channel-list {
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.channel-name {
+  color: #fff;
+  text-decoration: none;
+  
+}
+
+.channel-list:hover {
+  background-color: #3F0E40;
+}
+
+/* li.channel-list:focus {
+  background: #1264a3;
+} */
