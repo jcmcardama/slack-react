@@ -19,8 +19,11 @@ export const userLogin = (email, password) => {
             return response.json();
         })
         .then(result => {
-            if(result.success === undefined)localStorage.setItem("userId", JSON.stringify(result.data.id));
-            else if(!(result.success)){console.log(result.errors)};
+            if(result.success === undefined){
+                localStorage.setItem("userId", JSON.stringify(result.data.id));
+                window.location.href = '/panel';
+            }
+            else if(!(result.success)){alert(result.errors)};
         })
         .catch(error => {
             console.log(error)
