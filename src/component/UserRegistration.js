@@ -28,7 +28,7 @@ const UserRegistration = () => {
             setEmail("");
             setPassword("");
             setPasswordConfirmation("");
-            window.location.href = '/dashboard';
+            window.location.href = '/signin';
         }
       };
   
