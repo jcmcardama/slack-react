@@ -23,7 +23,7 @@ const Login = () => {
             alert("Fill required fields");
         }else{
             userLogin(email, password);
-            window.location.href = '/dashboard';
+            //window.location.href = '/panel';
         }
     };
 
@@ -68,7 +68,7 @@ const Login = () => {
                 <input
                 className="input-auth"
                 type="password"
-                placeholder="Pgitassword"
+                placeholder="Password"
                 value={password}
                 onChange={passwordChangeHandler} 
                 required
