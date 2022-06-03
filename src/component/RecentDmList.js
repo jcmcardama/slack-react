@@ -6,7 +6,7 @@ const RecentDmList = () => {
   let match = useRouteMatch();
 
   return (
-    <ul >
+    <ul className='dm-container'>
       {filteredMessages.map((message) => {
 
         return (
@@ -17,9 +17,12 @@ const RecentDmList = () => {
               console.log(`id: ${message.id}, class: 'User'`)
               localStorage.setItem('receiverId', message.id)
               }}>
+            <img src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" className='profile-pic' />
             <Link to={`${match.url}/channels/${message.id}`}>
               {" "}
-              {message.uid}
+              { 
+                message.uid.substring(0, message.uid.lastIndexOf("@"))
+              }
             </Link>
           </li>
           // insert chat component here

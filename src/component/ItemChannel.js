@@ -17,8 +17,9 @@ const ItemChannel = ({clickedId, changeClickStatus, channelId, channelName}) => 
                     changeClickStatus(channelId)
                     localStorage.setItem('receiverId', channelId)
                 }}
+                className='channel-list'
             >
-                <Link to={`${match.url}/channels/${channelId}`}>
+                <Link to={`${match.url}/channels/${channelId}`} className='channel-name'>
                     {" "}
                     {channelName.toUpperCase()}
                 </Link>
