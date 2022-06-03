@@ -36,7 +36,13 @@ export const postAddChannelMember = (channelId, memberId) => {
     };
 
     fetch("http://206.189.91.54//api/v1/channel/add_member", requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(result))
+        .then(response => response.json())
+        .then(result => {
+            console.log(result);
+            if(result.data !== undefined){
+                window.location.href = '/panel';
+            }
+            else if(!(result.success)){alert(result.errors)};
+        })
         .catch(error => console.log('error', error));
 }
