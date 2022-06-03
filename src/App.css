@@ -373,6 +373,8 @@
 }
 .channels img,
 .direct-messages img {
+  position: relative;
+  top: 5px;
   height: 20px;
   width: 20px;
   border-radius: 2px;
@@ -432,9 +434,9 @@
   background-color: #3F0E40;
 }
 
-.channel-list:focus {
+/* .channel-list:focus {
   background: #1264a3;
-}
+} */
 
 /* Add member form*/
 .member-form {
