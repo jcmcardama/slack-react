@@ -15,6 +15,7 @@ const ItemChannel = ({clickedId, changeClickStatus, channelId, channelName}) => 
                 onClick={() => {
                     showData()
                     changeClickStatus(channelId)
+                    localStorage.setItem('receiverId', channelId)
                 }}
             >
                 <Link to={`${match.url}/channels/${channelId}`}>
