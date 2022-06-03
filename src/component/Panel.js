@@ -9,10 +9,9 @@ import {
 } from 'react-icons/io5'
 import ChannelList from "./ChannelList"
 import AddButton from './AddButton'
-import { Link } from 'react-router-dom'
 import RecentDmList from './RecentDmList'
 import AddChannel from './AddChannel'
-import Chat from './Chat'
+import AddMessage from './AddMessage'
 
 const Panel = () => {
   // let navigate = useHistory()
@@ -22,6 +21,7 @@ const Panel = () => {
   const [showRecentDmList, setShowRecentDmList] = useState(false)
   const [addChannel, setAddChannel] = useState(false)
   const [addDM, setAddDM] = useState(false)
+  const [clickedID, setClickID] = useState(undefined)
 
 
   // CREATE A FUNCTION TO DISPLAY CHANNEL LIST
@@ -35,11 +35,9 @@ const Panel = () => {
             <button className="team-name-button">
               Avion School <FiChevronDown />
             </button>
-            <Link to={`/chat`}>
               <div className="compose-button">
                 <FiEdit />
               </div>
-            </Link>
           </div>
 
           {/* Main Nav */}
@@ -60,7 +58,7 @@ const Panel = () => {
                 <AddButton addChannel={addChannel} changeAddChannel={setAddChannel} />
               </div>
               {addChannel ? <AddChannel addChannel={addChannel} changeAddChannel={setAddChannel} /> : null}
-              {showChannelList ? <ChannelList /> : null}
+              {showChannelList ? <ChannelList clickedId={clickedID} changeClickStatus={setClickID}/> : null}
             </li>
 
             {/* DIRECT MESSAGES DROPDOWN */}
@@ -78,7 +76,8 @@ const Panel = () => {
                 <span>Direct Messages</span>
                 <AddButton addChannel={addDM} changeAddChannel={setAddDM} />
               </div>
-              {showRecentDmList ? <RecentDmList /> : null}
+              {addDM ? <AddMessage addChannel={addDM} changeAddChannel={setAddDM} clickedId={clickedID} changeClickStatus={setClickID}  /> : null}
+              {showRecentDmList ? <RecentDmList clickedId={clickedID} changeClickStatus={setClickID} /> : null}
             </li>
           </ul>
         </nav>

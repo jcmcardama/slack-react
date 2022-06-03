@@ -1,7 +1,7 @@
 const ChatTitle = (prop) => {
     return (
         <div>
-            <h1>{prop.chatName}</h1>
+            <h1 className="chat-title">{prop.chatName}</h1>
         </div>
     );
 };
