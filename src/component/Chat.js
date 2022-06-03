@@ -9,7 +9,7 @@ const Chat = (prop) => {
     const messageChangeHandler = (event) => {
         setMessage(event.target.value)
     }
-
+    
     const submitHandler = (event) => {
         event.preventDefault();
         sendMessage(prop.receiverId, prop.receiverClass, message)
@@ -18,7 +18,7 @@ const Chat = (prop) => {
 
     return (
         <div className="chat">
-            <Dashboard receiverId={prop.receiverId} receiverClass={prop.receiverClass}/>
+            <Dashboard chatName={prop.chatName} receiverId={prop.receiverId} receiverClass={prop.receiverClass}/>
             <form className="message-form" onSubmit={submitHandler}>
                 <input
                     className="message-area"
