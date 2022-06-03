@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  // Link
 } from "react-router-dom";
 
 import Login from "./component/Login.js";
@@ -23,7 +23,7 @@ function App() {
   return (
     <Router>
       <div>
-        <nav>
+        {/* <nav>
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -38,7 +38,7 @@ function App() {
               <Link to="/panel">Panel</Link>
             </li>
           </ul>
-        </nav>
+        </nav> */}
         <Switch>
           <Route path="/signin" component={Login} />
           <Route path="/create-account" component={UserRegistration} />

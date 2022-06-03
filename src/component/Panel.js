@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { 
   FiAtSign, 
   FiMoreVertical, 
@@ -11,7 +11,7 @@ import {
   IoChevronDownOutline,
 } from 'react-icons/io5'
 import { BsChatText } from 'react-icons/bs'
-import { useHistory, useParams, NavLink, Link } from 'react-router-dom'
+import { useHistory, /*useParams,*/ NavLink, Link } from 'react-router-dom'
 import Channels from "./Channels"
 import RecentDirectMessages from "./RecentDirectMessages"
 import RecentDmList from './RecentDmList'
@@ -20,7 +20,7 @@ import AddChannel from './AddChannel'
 const Panel = () => {
 
   let navigate = useHistory()
-  let { uid } = useParams()
+  // let { uid } = useParams()
 
   const [showChannelList, setShowChannelList] = useState(true)
   const [showRecentDmList, setShowRecentDmList] = useState(true)
