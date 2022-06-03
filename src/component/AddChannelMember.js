@@ -16,7 +16,7 @@ const AddChannelMember = ({ channelId }) => {
 
   return (
     <>
-      <form onSubmit={submitHandler}>
+      <form onSubmit={submitHandler} className="member-form">
         <input type="text" placeholder="Member email" onChange={(e) => setMemberEmail(e.target.value)} />
         {/* <CloseButton addChannel={addChannel} changeAddChannel={changeAddChannel}/> */}
       </form>

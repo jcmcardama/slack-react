@@ -392,6 +392,15 @@
   margin: 0 16px;
 }
 
+.addChannelForm input {
+  width: 180%;
+  font-size: 15px;
+}
+
+.addChannelForm input::placeholder {
+  padding: 10px;
+}
+
 .addChannelBtn {
   background-color: rgba(250, 250, 250, .5);
   cursor: pointer;
@@ -423,6 +432,22 @@
   background-color: #3F0E40;
 }
 
-/* li.channel-list:focus {
+.channel-list:focus {
   background: #1264a3;
-} */
+}
+
+/* Add member form*/
+.member-form {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.member-form input {
+  width: 80%;
+  font-size: 15px;
+}
+
+.member-form input::placeholder {
+  padding: 10px;
+}
