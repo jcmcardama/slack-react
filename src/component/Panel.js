@@ -7,12 +7,10 @@ import {
   IoChevronForwardOutline,
   IoChevronDownOutline,
 } from 'react-icons/io5'
-import { useHistory, Link } from 'react-router-dom'
 import ChannelList from "./ChannelList"
 import AddButton from './AddButton'
 import { BsChatText } from 'react-icons/bs'
 import { useHistory, /*useParams,*/ NavLink, Link } from 'react-router-dom'
-import Channels from "./Channels"
 import RecentDirectMessages from "./RecentDirectMessages"
 import RecentDmList from './RecentDmList'
 import AddChannel from './AddChannel'
