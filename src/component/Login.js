@@ -23,7 +23,6 @@ const Login = () => {
             alert("Fill required fields");
         }else{
             userLogin(email, password);
-            //window.location.href = '/panel';
         }
     };
 
