@@ -15,21 +15,23 @@ const ListMessage = (prop) => {
     };
 
     return (
-        <div className="chat-messages">
-            {items.data !== undefined ?
-                (
-                    items.data.map((item, index, arr) => (
-                        <div className="message-item" key={index}>
-                            <div className="sender">
-                                {((index > 0) && (arr[index - 1]).sender.email === (arr[index]).sender.email) ? (<></>) : (<><img src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" className='profile-pic' alt='user profile pic'/>{item.sender.email}:</>)}
+        <div className="chat-container">
+            <div className="chat-messages">
+                {items.data !== undefined ?
+                    (
+                        items.data.map((item, index, arr) => (
+                            <div className="message-item" key={index}>
+                                <div className="sender">
+                                    {((index > 0) && (arr[index - 1]).sender.email === (arr[index]).sender.email) ? (<></>) : (<><img src="https://a.slack-edge.com/80588/marketing/img/avatars/slackbot/avatar-slackbot@2x.png" className='profile-pic' alt='user profile pic'/><span className='sender-mail'>{item.sender.email}:</span></>)}
+                                </div>
+                                <div className="messageBody">
+                                    <div className="time">{convertTime24to12(item.created_at.slice(11, -8))}</div>
+                                    <div>{item.body}</div>
+                                </div>
                             </div>
-                            <div className="messageBody">
-                                <div className="time">{convertTime24to12(item.created_at.slice(11, -8))}</div>
-                                <div>{item.body}</div>
-                            </div>
-                        </div>
-                    ))
-                ) : (<></>)}
+                        ))
+                    ) : (<></>)}
+            </div>
         </div>
     );
 };

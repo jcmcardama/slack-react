@@ -1,11 +1,16 @@
 import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import {
   FiEdit,
-  FiChevronDown
+  FiChevronDown,
+  FiAtSign,
+  FiMoreVertical
 } from 'react-icons/fi'
+import { BsChatText, BsHash } from 'react-icons/bs'
 import {
   IoChevronForwardOutline,
   IoChevronDownOutline,
+  IoChatbubblesOutline
 } from 'react-icons/io5'
 import ChannelList from "./ChannelList"
 import AddButton from './AddButton'
@@ -22,6 +27,13 @@ const Panel = () => {
   const [addChannel, setAddChannel] = useState(false)
   const [addDM, setAddDM] = useState(false)
   const [clickedID, setClickID] = useState(undefined)
+
+  const staticList = [
+    { title: 'Threads', icon: <BsChatText /> },
+    { title: 'All DMs', icon: <IoChatbubblesOutline /> },
+    { title: 'Mentions & reactions', icon: <FiAtSign /> },
+    { title: 'More', icon: <FiMoreVertical /> },
+  ]
 
 
   // CREATE A FUNCTION TO DISPLAY CHANNEL LIST
@@ -42,6 +54,17 @@ const Panel = () => {
 
           {/* Main Nav */}
           <ul className="sidebar-menu">
+            {staticList.map((element, index) => {
+            return (
+              <li className="menu-options" key={index}>
+                {element.icon}
+                <NavLink to={'*'}>
+                  <span>{element.title}</span>
+                </NavLink>
+              </li>
+            )
+          })}
+
             <li className="channels-dropdown">
               {/* CHANNEL LIST DROPDOWN */}
               <div className="channels-dropdown-header">
@@ -62,8 +85,8 @@ const Panel = () => {
             </li>
 
             {/* DIRECT MESSAGES DROPDOWN */}
-            <li className="direct-messages-dropdown">
-              <div className="direct-messages-dropdown-header">
+            <li className="direct-messageslist-dropdown">
+              <div className="direct-messageslist-dropdown-header">
                 {showRecentDmList ? (
                   <IoChevronDownOutline
                     onClick={() => setShowRecentDmList(!showRecentDmList)}
