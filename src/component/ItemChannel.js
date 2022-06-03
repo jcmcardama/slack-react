@@ -1,8 +1,6 @@
 import {channelDetails} from '../api/api-channel-details'
 import { Link, useRouteMatch } from "react-router-dom";
 import AddChannelMember from "./AddChannelMember";
-import { useState } from 'react';
-import AddButton from './AddButton';
 
 const ItemChannel = ({clickedId, changeClickStatus, channelId, channelName}) => {
     let match = useRouteMatch();
