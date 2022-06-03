@@ -461,7 +461,11 @@
 
 /* chat styles */
 .chat {
-  width: 100%;
+  position: fixed;
+  color: #000000;
+  top: 0;
+  right: 0;
+  width: 80%;
   height: 100vh;
   padding: 20px;
   display: flex;

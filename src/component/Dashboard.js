@@ -16,7 +16,7 @@ const Dashboard = (prop) => {
 
     return(
         <div>
-            <ChatTitle data={data} id={prop.receiverId} class={prop.receiverClass}/>
+            <ChatTitle chatName={prop.chatName}/>
             <ListMessage data={data}/>
         </div>
     );

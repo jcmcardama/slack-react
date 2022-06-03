@@ -82,7 +82,6 @@ const Panel = () => {
             </li>
           </ul>
         </nav>
-        <Chat className="chat"/>
       </div>
     </>
   )
