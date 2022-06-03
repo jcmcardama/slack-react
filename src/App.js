@@ -13,6 +13,7 @@ import NotFound from "./component/NotFound.js";
 import Home from "./component/Home.js";
 import {userChannelNamesAndId} from "./api/api-channels";
 import {fetchRecentMessages} from './api/api-recentDm';
+import Chat from "./component/Chat.js";
 
 //init user messages and channels
 fetchRecentMessages()
@@ -42,6 +43,7 @@ function App() {
           <Route path="/signin" component={Login} />
           <Route path="/create-account" component={UserRegistration} />
           <Route path="/panel" component={Panel} />
+          <Route path="/chat" component={Chat} />
           <Route exact path="/" component={Home} />
           <Route path="*" component={NotFound} />
         </Switch>

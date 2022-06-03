@@ -10,7 +10,7 @@ const RecentDmList = () => {
       {recentMessages.map((message) => {
 
         return (
-          <li key={message.key} onClick={() => console.log(`id: ${message.id}, class: 'User'`)}>
+          <li className='direct-messages' key={message.key} onClick={() => console.log(`id: ${message.id}, class: 'User'`)}>
             <Link to={`${match.url}/channels/${message.id}`}>
               {" "}
               {message.uid}
