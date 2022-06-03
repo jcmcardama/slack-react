@@ -12,12 +12,12 @@ const RecentDmList = ({clickedId, changeClickStatus}) => {
 
         return (
           <li 
-            className='direct-messages' 
+            className='direct-messageslist' 
             key={message.key} 
             onClick={() => {
               changeClickStatus(message.id)
               }}>
-            <img src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" className='profile-pic' alt='user profile pic'/>
+            <img src="https://a.slack-edge.com/80588/marketing/img/avatars/slackbot/avatar-slackbot@2x.png"/>
             <Link to={`${match.url}/channels/${message.id}`}>
               {" "}
               { 

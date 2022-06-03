@@ -253,8 +253,8 @@
 .sidebar-container {
   display: flex;
   flex-direction: column;
+  width: 25vw;
   /* grid-column: 1/2; */
-  width: 15vw;
   height: 100vh;
   background-color: var(--auth-btn);
   border: 1px solid rgba(255, 255, 255, 0.063);
@@ -298,7 +298,7 @@
   height: 100%;
   font-weight: 500;
   font-family: "Lato", sans-serif;
-  padding: 15px 0;
+  padding: 20px 5px 0 10px;
   display: flex;
   flex-direction: column;
   border: 1px solid hsla(0, 0%, 100%, 0.063);
@@ -326,7 +326,7 @@
 }
 
 .channels-dropdown-header,
-.direct-messages-dropdown-header {
+.direct-messageslist-dropdown-header {
   width: 100%;
   padding: 10px 16px 0px 16px;
   display: flex;
@@ -334,7 +334,7 @@
   line-height: 2;
 }
 .channels-dropdown-header span,
-.direct-messages-dropdown-header span {
+.direct-messageslist-dropdown-header span {
   width: 65%;
   padding: 8px;
 }
@@ -349,31 +349,32 @@
 }
 
 .channels,
-.direct-messages {
+.direct-messageslist {
   list-style: none;
 }
 .channels li,
-.direct-messages li {
+.direct-messageslist li {
   padding: 0 29px;
   display: flex;
   align-items: center;
   line-height: 1.8;
 }
+
 .channels:hover,
-.direct-messages:hover {
+.direct-messageslist:hover {
   background-color: var(--search-bar);
   font-weight: 500;
 }
 .channels:active,
-.direct-messages:active {
+.direct-messageslist:active {
   background-color: rgb(18, 99, 163);
 }
 .channels span,
-.direct-messages span {
+.direct-messageslist span {
   padding-left: 8px;
 }
 .channels img,
-.direct-messages img {
+.direct-messageslist img {
   position: relative;
   top: 5px;
   height: 20px;
@@ -381,7 +382,7 @@
   border-radius: 2px;
 }
 .channels a,
-.direct-messages a {
+.direct-messageslist a {
   color: #ffffff;
   text-decoration: none;
 }
@@ -419,10 +420,17 @@
   display: none;
 }
 
-.channel-list, .direct-messages{
+.dm-container img {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 1.5rem;
+  top: -1px;
+}
+
+.channel-list, .direct-messageslist{
   padding-left: 20px;
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 
 .channel-name {
@@ -466,7 +474,7 @@
   color: #000000;
   top: 0;
   right: 0;
-  width: 85vw;
+  width: 75vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -487,7 +495,8 @@
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, .5);
   outline: none;
-  padding: 10px;
+  padding: rem;
+  margin-left: 2rem;
 }
 
 .sendBtn {
@@ -505,6 +514,11 @@
   font-size: 2rem;
 }
 
+.chat-container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 .chat-title {
   display: flex;
   align-items: center;
@@ -520,6 +534,21 @@
   overflow-y: scroll;
   height: 80vh;
   padding: 20px;
+
+  margin-top: 1rem;
+  margin-left: 2rem;
+}
+
+.profile-pic {
+  height: 40px !important;
+  width: 40px !important;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.sender-mail {
+  top: -2rem;
 }
 
 .sender {
@@ -530,13 +559,24 @@
 
 .time {
   width: 75px;
-  text-align: justify;
-  font-size: small;
+  padding-left: .5rem;
+  /* text-align: left; */
+  font-size: .8rem;
+  opacity: 0;
 }
 
 .messageBody {
   display: flex;
-  
+  margin-left: -1rem;
+  padding: .5rem 0;
+   
+}
+.messageBody:hover {
+  background-color: #dadada;
+}
+
+.messageBody:hover > .time {
+  opacity: 1;
 }
 
 .message-item {
@@ -551,14 +591,13 @@
 polyline, path {
   stroke:inherit;
   }
-.profile-pic {
-  height: 50px !important;
-  width: 50px !important;
-  margin-bottom: 10px;
-  margin-right: 10px;
-}
+  
 
-.direct-messages {
+.direct-messageslist {
   display: flex;
   align-items: center;
+}
+
+.hash {
+  margin-right: 1rem;
 }

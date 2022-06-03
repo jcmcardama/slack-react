@@ -1,6 +1,8 @@
 
 import { channels } from "../api/api-channels";
 import { Link, useRouteMatch } from "react-router-dom";
+import { BsHash } from 'react-icons/bs'
+
 import AddChannelMember from "./AddChannelMember";
 import Chat from "./Chat";
 
@@ -13,11 +15,12 @@ const ChannelList = ({clickedId, changeClickStatus}) => {
                 channels.map((channel) => {
                     return (
                         <>
+                            
                             <li
                                 key={channel.name}
                                 onClick={() => changeClickStatus(channel.id)}
                                 className='channel-list'
-                            >
+                            ><BsHash className="hash"/>
                                 <Link key={channel.id} to={`${match.url}/channels/${channel.id}`} className='channel-name'>
                                     {" "}
                                     {channel.name}
