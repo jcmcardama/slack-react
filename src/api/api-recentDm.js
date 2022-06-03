@@ -14,6 +14,7 @@ export const recentDm = () => {
         .catch(error => console.log('error', error));
 }
 export const recentMessages = []
+export let filteredMessages = []
 
 export const fetchRecentMessages = async () => {
     const messageObjArr = await recentDm()
@@ -21,6 +22,13 @@ export const fetchRecentMessages = async () => {
     let keyGen = 1000
     for(let i = 0; i<messageArr.length; i++) {
         recentMessages.push({id: messageArr[i].id, uid: messageArr[i].uid, key: keyGen++})
-        
     }
+    
+    filteredMessages = Object.values(recentMessages.reduce((unique, o) => {
+        if(!unique[o.id]) unique[o.id] = o;
+        
+        return unique;
+    }, {}));
 }
+
+  
