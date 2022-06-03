@@ -407,16 +407,16 @@
 }
 
 /* channel list */
-.channel-container {
+.channel-container, .dm-container {
   height: 40vh;
   overflow-y: scroll;
 }
 
-.channel-container::-webkit-scrollbar {
+.channel-container::-webkit-scrollbar, .dm-container::-webkit-scrollbar {
   display: none;
 }
 
-.channel-list {
+.channel-list, .direct-messages{
   padding-left: 20px;
   padding-top: 10px;
   padding-bottom: 10px;

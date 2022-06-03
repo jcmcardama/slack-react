@@ -6,7 +6,7 @@ const RecentDmList = () => {
   let match = useRouteMatch();
 
   return (
-    <ul >
+    <ul className='dm-container'>
       {filteredMessages.map((message) => {
 
         return (
@@ -19,7 +19,9 @@ const RecentDmList = () => {
               }}>
             <Link to={`${match.url}/channels/${message.id}`}>
               {" "}
-              {message.uid}
+              { 
+                message.uid.substring(0, message.uid.lastIndexOf("@"))
+              }
             </Link>
           </li>
           // insert chat component here
