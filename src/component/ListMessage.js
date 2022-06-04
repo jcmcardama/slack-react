@@ -15,8 +15,8 @@ const ListMessage = (prop) => {
     };
 
     return (
-        <div className="chat-container">
-            <div className="chat-messages">
+        <div className="chat-messages">
+            <div>
                 {items.data !== undefined ?
                     (
                         items.data.map((item, index, arr) => (
