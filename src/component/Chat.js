@@ -23,7 +23,7 @@ const Chat = (prop) => {
                 <input
                     className="message-area"
                     type="textarea"
-                    placeholder="Message..."
+                    placeholder={"Message "+ prop.chatName + "..."}
                     value={message}
                     onChange={messageChangeHandler}
                 />
