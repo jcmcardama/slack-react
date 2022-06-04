@@ -14,6 +14,7 @@ const ListMessage = (prop) => {
         return time.join('');
     };
 
+
     return (
         <div className="chat-messages">
             <div>
@@ -22,7 +23,7 @@ const ListMessage = (prop) => {
                         items.data.map((item, index, arr) => (
                             <div className="message-item" key={index}>
                                 <div className="sender">
-                                    {((index > 0) && (arr[index - 1]).sender.email === (arr[index]).sender.email) ? (<></>) : (<><img src="https://a.slack-edge.com/80588/marketing/img/avatars/slackbot/avatar-slackbot@2x.png" className='profile-pic' alt='user profile pic'/><span className='sender-mail'>{item.sender.email}:</span></>)}
+                                    {((index > 0) && (arr[index - 1]).sender.email === (arr[index]).sender.email) ? (<></>) : (<><img src="https://a.slack-edge.com/80588/marketing/img/avatars/slackbot/avatar-slackbot@2x.png" className='profile-pic' alt='user profile pic'/><span className='sender-mail'>{item.sender.email} <small className="sender-time">{convertTime24to12(item.created_at.slice(11, -8))}</small></span></>)}
                                 </div>
                                 <div className="messageBody">
                                     <div className="time">{convertTime24to12(item.created_at.slice(11, -8))}</div>
