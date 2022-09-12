@@ -44,7 +44,7 @@ function App() {
           <Route path="/create-account" component={UserRegistration} />
           <Route path="/panel" component={Panel} />
           <Route path="/chat" component={Chat} />
-          <Route exact path="/slack-react" component={Home} />
+          <Route exact path="/" component={Home} />
           <Route path="*" component={NotFound} />
         </Switch>
       </div>
