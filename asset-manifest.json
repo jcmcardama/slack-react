@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/slack-react/static/css/main.7ec06219.css",
+    "main.js": "/slack-react/static/js/main.b669ccf7.js",
+    "static/js/787.0b1bd947.chunk.js": "/slack-react/static/js/787.0b1bd947.chunk.js",
+    "index.html": "/slack-react/index.html",
+    "main.7ec06219.css.map": "/slack-react/static/css/main.7ec06219.css.map",
+    "main.b669ccf7.js.map": "/slack-react/static/js/main.b669ccf7.js.map",
+    "787.0b1bd947.chunk.js.map": "/slack-react/static/js/787.0b1bd947.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7ec06219.css",
+    "static/js/main.b669ccf7.js"
+  ]
+}
