@@ -516,8 +516,8 @@
 .chat-container {
   display: flex;
   flex-direction: column-reverse;
-  overflow-y: scroll;
-
+  overflow: hidden;
+}
 
 .chat-title {
   display: flex;
